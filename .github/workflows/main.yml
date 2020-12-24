@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Angular Deploy gh-pages Actions
-        uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.1
+        uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.2.1
         with:
           github_access_token: ${{ secrets.ACCESS_TOKEN }}
           build_folder: dist/ngrx-example-app
