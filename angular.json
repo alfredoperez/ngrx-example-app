@@ -110,5 +110,8 @@
       }
     }
   },
-  "defaultProject": "ngrx-example-app"
+  "defaultProject": "ngrx-example-app",
+  "cli": {
+    "analytics": false
+  }
 }
