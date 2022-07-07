@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkngrx_example_app=self.webpackChunkngrx_example_app||[]).push([[848],{8848:(c,t,e)=>{e.r(t),e.d(t,{AtomicStateExampleModule:()=>m});var o=e(6895),l=e(4650);let m=(()=>{class a{}return a.\u0275fac=function(u){return new(u||a)},a.\u0275mod=l.oAB({type:a}),a.\u0275inj=l.cJS({imports:[o.ez]}),a})()}}]);
