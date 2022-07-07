@@ -6,7 +6,6 @@ import { FriendsTableComponent } from './friends-table.component';
 import { FriendsTableModule } from './friends-table.module';
 
 describe('FriendsTableComponent', () => {
-
   let component: FriendsTableComponent;
   let fixture: ComponentFixture<FriendsTableComponent>;
 
@@ -25,14 +24,17 @@ describe('FriendsTableComponent', () => {
   });
 
   describe('ngOnInit', () => {
-
     it('should set the visible columns', () => {
       component.visibleColumns = [];
       component.friends = of([]);
       component.ngOnInit();
-      expect(component.visibleColumns).toEqual(['name', 'created', 'age', 'weight', 'friends']);
+      expect(component.visibleColumns).toEqual([
+        'name',
+        'created',
+        'age',
+        'kids',
+        'friends'
+      ]);
     });
-
   });
-
 });

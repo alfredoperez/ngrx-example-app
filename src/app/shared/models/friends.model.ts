@@ -23,9 +23,9 @@ export interface Friend {
   age: number;
 
   /**
-   * Weight in pounds
+   *  Number of kids
    */
-  weight: number;
+  kids: number;
 
   /**
    * List of friends

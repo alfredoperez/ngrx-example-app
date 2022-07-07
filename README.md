@@ -1,25 +1,27 @@
 # NgrxExampleApp
 
-The goal of this project is to show how to use ngrx including some situations that are missing on the ngrx example app.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.4.
 
-The following scenarios are shown in this repo:
+## Development server
 
-- Main Branch
-- [ ] Use NgRx entity to fetch data
-- [ ] Handle getting data from multiple data sources
-- [ ] Handle pagination
-- [ ] Handle search queries
-- [ ] Handle all the CRUD operations
-- [ ] Handle stopping a request
-- [ ] Use component store for a stepper
-- [ ] Feed stepper with ngrx entity data
-- [ ] Tests
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
+## Code scaffolding
 
-- Atomic State Branch
-- [ ] Create interfaces for Atomic State to use on the NgRx Entity
-- [ ] Create re-usable selectors for the different states on the property holding the atomic state
-- [ ] Create interfaces for Atomic State for the component store
-- [ ] Tests
-- [ ] Link to compare both branches
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

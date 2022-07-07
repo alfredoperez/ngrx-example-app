@@ -20,7 +20,7 @@
              formControlName="name"
              matInput
              required>
-      <mat-error *ngIf="form.controls.name.touched && form.controls.name.invalid">
+      <mat-error *ngIf="form.controls['name'].touched && form.controls['name'].invalid">
         Name is required!
       </mat-error>
     </mat-form-field>
@@ -31,18 +31,18 @@
                matInput
                required
                type="number">
-        <mat-error *ngIf="form.controls.age.touched && form.controls.age.invalid">
+        <mat-error *ngIf="form.controls['age'].touched && form.controls['age'].invalid">
           Age is required!
         </mat-error>
       </mat-form-field>
       <mat-form-field appearance="fill">
-        <mat-label>Weight</mat-label>
-        <input formControlName="weight"
+        <mat-label>Number of Kids</mat-label>
+        <input formControlName="kids"
                matInput
                required
                type="number">
-        <mat-error *ngIf="form.controls.weight.touched && form.controls.weight.invalid">
-          Weight is required!
+        <mat-error *ngIf="form.controls['kids'].touched && form.controls['kids'].invalid">
+          Number of kids is required!
         </mat-error>
       </mat-form-field>
     </div>

@@ -5,64 +5,68 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "watch": "ng build --watch --configuration development",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "lint:fix": "npx eslint 'src/**/*.{js,jsx,ts,tsx,html,css,scss}' --quiet --fix",
+    "format": "npx prettier 'src/**/*.{js,jsx,ts,tsx,html,css,scss}' --write"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~11.0.5",
-    "@angular/cdk": "^11.0.3",
-    "@angular/common": "~11.0.5",
-    "@angular/compiler": "~11.0.5",
-    "@angular/core": "~11.0.5",
-    "@angular/flex-layout": "^11.0.0-beta.33",
-    "@angular/forms": "~11.0.5",
-    "@angular/material": "^11.0.3",
-    "@angular/platform-browser": "~11.0.5",
-    "@angular/platform-browser-dynamic": "~11.0.5",
-    "@angular/router": "~11.0.5",
-    "@ngrx/effects": "^10.1.2",
-    "@ngrx/entity": "^10.1.2",
-    "@ngrx/router-store": "^10.1.2",
-    "@ngrx/store": "^10.1.2",
-    "@ngrx/store-devtools": "^10.1.2",
-    "faker": "^5.1.0",
-    "rxjs": "~6.6.0",
-    "tslib": "^2.0.0",
-    "zone.js": "~0.10.2"
+    "@angular/animations": "^14.0.0",
+    "@angular/cdk": "^14.0.4",
+    "@angular/common": "^14.0.0",
+    "@angular/compiler": "^14.0.0",
+    "@angular/core": "^14.0.0",
+    "@angular/flex-layout": "14.0.0-beta.40",
+    "@angular/forms": "^14.0.0",
+    "@angular/material": "^14.0.4",
+    "@angular/platform-browser": "^14.0.0",
+    "@angular/platform-browser-dynamic": "^14.0.0",
+    "@angular/router": "^14.0.0",
+    "@ngrx/effects": "^14.0.1",
+    "@ngrx/entity": "^14.0.1",
+    "@ngrx/router-store": "^14.0.1",
+    "@ngrx/store": "^14.0.1",
+    "@ngrx/store-devtools": "^14.0.1",
+    "rxjs": "~7.5.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.1100.5",
-    "@angular/cli": "~11.0.5",
-    "@angular/compiler-cli": "~11.0.5",
-    "@types/faker": "^5.1.5",
-    "@types/jest": "^26.0.19",
-    "@types/node": "^12.11.1",
-    "codelyzer": "^6.0.0",
-    "jest": "^26.6.3",
-    "jest-preset-angular": "^8.3.2",
-    "karma-coverage": "~2.0.3",
-    "protractor": "~7.0.0",
-    "ts-node": "~8.3.0",
-    "tslint": "~6.1.0",
-    "typescript": "~4.0.2"
+    "@angular-devkit/build-angular": "^14.0.4",
+    "@angular-eslint/builder": "14.0.0",
+    "@angular-eslint/eslint-plugin": "14.0.0",
+    "@angular-eslint/eslint-plugin-template": "14.0.0",
+    "@angular-eslint/schematics": "14.0.0",
+    "@angular-eslint/template-parser": "14.0.0",
+    "@angular/cli": "~14.0.4",
+    "@angular/compiler-cli": "^14.0.0",
+    "@faker-js/faker": "^7.3.0",
+    "@types/jasmine": "~4.0.0",
+    "@types/jest": "^28.1.4",
+    "@typescript-eslint/eslint-plugin": "5.29.0",
+    "@typescript-eslint/parser": "5.29.0",
+    "eslint": "^8.18.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jest": "^26.5.3",
+    "eslint-plugin-prettier": "^4.2.1",
+    "jasmine-core": "~4.1.0",
+    "jest": "^28.1.2",
+    "jest-preset-angular": "^12.1.0",
+    "prettier": "^2.7.1",
+    "typescript": "~4.7.2"
   },
   "jest": {
     "preset": "jest-preset-angular",
     "setupFilesAfterEnv": [
-      "<rootDir>/setupJest.ts"
+      "<rootDir>/setup-jest.ts"
     ],
     "testPathIgnorePatterns": [
       "<rootDir>/node_modules/",
       "<rootDir>/dist/"
     ],
-    "globals": {
-      "ts-jest": {
-        "tsConfig": "<rootDir>/tsconfig.spec.json",
-        "stringifyContentPathRegex": "\\.html$"
-      }
-    }
+    "globalSetup": "jest-preset-angular/global-setup"
   }
 }

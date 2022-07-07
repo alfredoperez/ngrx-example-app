@@ -34,7 +34,7 @@
           mat-cell> {{element.created |  date: 'mediumDate'}}
       </td>
     </ng-container>
-    <ng-container matColumnDef="weight">
+    <ng-container matColumnDef="kids">
       <th *matHeaderCellDef
           [ngClass]="'w-100'"
           mat-header-cell
@@ -42,7 +42,7 @@
         Weight
       </th>
       <td *matCellDef="let element"
-          mat-cell> {{element.weight}} lbs
+          mat-cell> {{element.kids}}
       </td>
     </ng-container>
     <ng-container matColumnDef="age">

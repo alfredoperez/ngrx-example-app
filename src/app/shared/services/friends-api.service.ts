@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import * as faker from 'faker';
+import { faker } from '@faker-js/faker';
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { Friend } from '../models/friends.model';
@@ -8,11 +8,9 @@ import { Friend } from '../models/friends.model';
  * Service to do API call to the `friends` resource.
  * NOTE: This is a mock, since there is not an API endpoint for friend
  */
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class FriendsApiService {
-
-  constructor() {
-  }
+  constructor() {}
 
   /**
    * Get list of friends for current user
@@ -27,9 +25,9 @@ export class FriendsApiService {
 
     for (let i = 0; i < 150; i++) {
       const friend = {
-        id: faker.random.uuid(),
+        id: faker.datatype.uuid(),
         name: faker.name.findName(),
-        weight: Math.floor(Math.random() * (220 - 120)) + 120,
+        kids: Math.floor(Math.random() * 5),
         age: Math.floor(Math.random() * (65 - 23)) + 23,
         created: faker.date.between(
           new Date(2020, 4, 1),
@@ -40,7 +38,7 @@ export class FriendsApiService {
       friends.push(friend);
     }
 
-    friends.forEach(friend => {
+    friends.forEach((friend) => {
       const maxNumberOfFriends = Math.floor(Math.random() * (3 - 1)) + 1;
 
       for (let i = 0; i < maxNumberOfFriends; i++) {
@@ -62,10 +60,9 @@ export class FriendsApiService {
     const newFriend = {
       ...friend,
       created: new Date(Date.now()),
-      id: faker.random.uuid()
+      id: faker.datatype.uuid()
     };
 
     return of(newFriend);
-
   }
 }
