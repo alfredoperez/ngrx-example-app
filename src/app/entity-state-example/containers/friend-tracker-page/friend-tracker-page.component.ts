@@ -1,27 +1,24 @@
-import {Component} from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
-import {Store} from '@ngrx/store';
-import {Observable} from 'rxjs';
-import {Friend} from '../../../shared/models/friends.model';
-import {FriendsApiService} from '../../../shared/services/friends-api.service';
-import {AddFriendModalComponent} from '../../components/add-friend-modal/add-friend-modal.component';
+import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { Friend } from '../../../shared/models/friends.model';
+import { FriendsApiService } from '../../../shared/services/friends-api.service';
 import {
   selectAllFriends,
   selectError,
-  selectFriendAcquisitionDifference,
   selectIsLoaded,
-  selectIsLoading,
-  selectTotalFriendsCurrentMonth
+  selectIsLoading
 } from '../../state';
-import {FriendsTrackerPageActions} from '../../state/actions';
-import {State} from '../../state/reducers/friends-tracker.reducers';
+import { FriendsTrackerPageActions } from '../../state/actions';
+import { State } from '../../state/reducers/friends-tracker.reducers';
+import { AddFriendModalComponent } from '../../../shared/components/add-friend-modal/add-friend-modal.component';
 
 @Component({
   templateUrl: './friend-tracker-page.component.html',
   styleUrls: ['./friend-tracker-page.component.scss']
 })
 export class FriendTrackerPageComponent {
-
   /**
    * Observable of the list of friends
    */
@@ -42,26 +39,17 @@ export class FriendTrackerPageComponent {
    */
   public error$: Observable<string | null>;
 
-
-  public totalFriendsCurrentMonth$: Observable<number>;
-  // public friendsCurrentMonth$: Observable<Array<TimelineDataPoint>>;
-  public percentageDifference$: Observable<number>;
-
   constructor(
     private friendsService: FriendsApiService,
     private dialog: MatDialog,
-    private store: Store<State>) {
-
+    private store: Store<State>
+  ) {
     this.store.dispatch(FriendsTrackerPageActions.enter());
 
     this.friends$ = this.store.select(selectAllFriends);
     this.isLoaded$ = this.store.select(selectIsLoaded);
     this.isLoading$ = this.store.select(selectIsLoading);
     this.error$ = this.store.select(selectError);
-
-    this.totalFriendsCurrentMonth$ = this.store.select(selectTotalFriendsCurrentMonth);
-    this.percentageDifference$ = this.store.select(selectFriendAcquisitionDifference);
-    // this.friendsCurrentMonth$ = this.store.select(selectTimelineDataOfFriendsCurrentMonth);
   }
 
   /**
@@ -69,20 +57,19 @@ export class FriendTrackerPageComponent {
    * Dispatches an action to save the friend once the dialog is closed
    */
   public async addFriend(): Promise<void> {
-
-    const friend = await this.dialog.open(
-      AddFriendModalComponent,
-      {
+    const friend = await this.dialog
+      .open(AddFriendModalComponent, {
         data: {
           friends$: this.store.select(selectAllFriends)
         }
-      }
-    ).afterClosed().toPromise();
+      })
+      .afterClosed()
+      .toPromise();
 
     if (!friend) {
       return;
     }
 
-    this.store.dispatch(FriendsTrackerPageActions.addFriend({friend}));
+    this.store.dispatch(FriendsTrackerPageActions.addFriend({ friend }));
   }
 }

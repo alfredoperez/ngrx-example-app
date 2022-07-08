@@ -28,7 +28,7 @@ export class FriendsApiService {
         id: faker.datatype.uuid(),
         name: faker.name.findName(),
         kids: Math.floor(Math.random() * 5),
-        age: Math.floor(Math.random() * (65 - 23)) + 23,
+        age: Math.floor(Math.random() * (42 - 21)) + 21,
         created: faker.date.between(
           new Date(2020, 4, 1),
           new Date(2020, 6, 10)

@@ -3,10 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'friends-tracker',
+    path: 'entity-state',
     loadChildren: () =>
-      import('./friend-tracker/friend-tracker.module').then(
-        (m) => m.FriendTrackerModule
+      import('./entity-state-example/entity-state.module').then(
+        (m) => m.EntityStateModule
       )
   },
   {
@@ -18,7 +18,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'friends-tracker',
+    redirectTo: 'entity-state',
     pathMatch: 'full'
   }
 ];

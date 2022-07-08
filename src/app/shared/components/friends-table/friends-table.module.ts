@@ -6,6 +6,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { FriendsNamesPipeModule } from '../../../shared/pipes/friends-names/friends-names-pipe.module';
 import { FriendsTableComponent } from './friends-table.component';
+import { MaterialModule } from '../../material.module';
 
 @NgModule({
   declarations: [FriendsTableComponent],
@@ -14,11 +15,12 @@ import { FriendsTableComponent } from './friends-table.component';
   ],
   imports: [
     CommonModule,
-    FlexModule,
-    FlexLayoutModule,
-    MatTableModule,
-    MatSortModule,
-    MatPaginatorModule,
+      MaterialModule,
+    // FlexModule,
+    // FlexLayoutModule,
+    // MatTableModule,
+    // MatSortModule,
+    // MatPaginatorModule,
     FriendsNamesPipeModule
   ]
 })

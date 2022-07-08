@@ -1,9 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Inject,
-  OnInit
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
@@ -31,8 +26,8 @@ export class AddFriendModalComponent {
     private dialogRef: MatDialogRef<AddFriendModalComponent>,
     private formBuilder: FormBuilder
   ) {
-    this.friends$ = this.defaults.friends$;
-    this.form = this.formBuilder.group({
+    this.friends$ = defaults.friends$;
+    this.form = formBuilder.group({
       name: ['', Validators.required],
       age: ['', Validators.required],
       kids: ['', Validators.required],

@@ -5,15 +5,14 @@ import { FriendTrackerPageComponent } from './containers/friend-tracker-page/fri
 import { FriendTrackerPageModule } from './containers/friend-tracker-page/friend-tracker-page.module';
 import { FriendTrackerStateModule } from './state/friend-tracker-state.module';
 
-const featureRoutes = [{path: '', component: FriendTrackerPageComponent}];
+const featureRoutes = [{ path: '', component: FriendTrackerPageComponent }];
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(featureRoutes),
     FriendTrackerStateModule,
-    FriendTrackerPageModule,
+    FriendTrackerPageModule
   ]
 })
-export class FriendTrackerModule {
-}
+export class EntityStateModule {}

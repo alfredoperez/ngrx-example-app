@@ -13,7 +13,6 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AtomicStateExampleComponent } from './atomic-state-example/atomic-state-example.component';
 
 @NgModule({
   declarations: [AppComponent],
