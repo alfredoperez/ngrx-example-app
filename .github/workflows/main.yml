@@ -18,10 +18,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Angular Deploy gh-pages Actions
-        uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.2.1
+        uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.2
         with:
           github_access_token: ${{ secrets.ACCESS_TOKEN }} # see the Configuration section for how you can create secrets
           build_configuration: production # The build environment for the app. please look configurations in your angular.json
           base_href: /ngrx-example-app/   # make sure this corresponds to https://<your_username>.github.io/<base_href>/
           deploy_branch: gh-pages # The branch the action should deploy to.
-         #ng   angular_project_dir: dist/ngrx-example-app # The folder where your project is supposed to be after running ng build by the action.
+          angular_project_dir: dist/ngrx-example-app # The folder where your project is supposed to be after running ng build by the action.
