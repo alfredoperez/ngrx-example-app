@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FriendsReducers should set the error message when failing to add a friend 1`] = `
+Object {
+  "callState": Object {
+    "errorMessage": "error",
+  },
+  "entities": Object {},
+  "ids": Array [],
+}
+`;
+
+exports[`FriendsReducers should set the error message when failing to retrieve friends list 1`] = `
+Object {
+  "callState": Object {
+    "errorMessage": "error",
+  },
+  "entities": Object {},
+  "ids": Array [],
+}
+`;
+
+exports[`FriendsReducers should set the loaded when data returned 1`] = `
+Object {
+  "callState": "LOADED",
+  "entities": Object {},
+  "ids": Array [],
+}
+`;
+
+exports[`FriendsReducers should set the loaded when successfully added a friend 1`] = `
+Object {
+  "callState": "LOADED",
+  "entities": Object {
+    "": Object {
+      "id": "",
+    },
+  },
+  "ids": Array [
+    "",
+  ],
+}
+`;
+
+exports[`FriendsReducers should set the loading when adding a friend 1`] = `
+Object {
+  "callState": "LOADING",
+  "entities": Object {},
+  "ids": Array [],
+}
+`;
+
+exports[`FriendsReducers should set the loading when entering the page 1`] = `
+Object {
+  "callState": "LOADING",
+  "entities": Object {},
+  "ids": Array [],
+}
+`;

@@ -3,12 +3,22 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
-    loadChildren: () => import('./friend-tracker/friend-tracker.module').then(m => m.FriendTrackerModule),
+    path: 'entity-state',
+    loadChildren: () =>
+      import('./entity-state-example/entity-state.module').then(
+        (m) => m.EntityStateModule
+      )
+  },
+  {
+    path: 'atomic-state',
+    loadChildren: () =>
+      import('./atomic-state-example/atomic-state-example.module').then(
+        (m) => m.AtomicStateExampleModule
+      )
   },
   {
     path: '**',
-    redirectTo: '',
+    redirectTo: 'entity-state',
     pathMatch: 'full'
   }
 ];
@@ -17,6 +27,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
-}
-
+export class AppRoutingModule {}

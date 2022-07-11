@@ -1,1 +1,13 @@
-<router-outlet></router-outlet>
+<mat-toolbar color="primary" class="mat-elevation-z6">
+  <h1>NgRx Playground</h1>
+    <span class="spacer"></span>
+    <div>
+        <a mat-button [routerLink]="'/entity-state'" routerLinkActive="link-selected">NgRx Entity</a>
+        <a mat-button [routerLink]="'/atomic-state'" routerLinkActive="link-selected">Atomic State</a>
+    </div>
+</mat-toolbar>
+<div class="content">
+    <router-outlet></router-outlet>
+</div>
+
+

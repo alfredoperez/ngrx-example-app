@@ -1,0 +1,85 @@
+<div class="container mat-elevation-z8">
+  <div class="table-header"
+       fxLayout="row"
+       fxLayoutAlign="space-between center">
+    <h2 class="title">Friends</h2>
+    <ng-content select=".table-actions"></ng-content>
+  </div>
+  <table
+    @fadeInUp
+    [dataSource]="friendsDataSource"
+    class="table"
+    mat-table
+    matSort
+    matSortActive="created"
+    matSortDirection="desc">
+    <ng-container matColumnDef="name">
+      <th *matHeaderCellDef
+          [ngClass]="'w-200'"
+          mat-header-cell
+          mat-sort-header>
+        Name
+      </th>
+      <td *matCellDef="let element"
+          mat-cell> {{element.name}} </td>
+    </ng-container>
+    <ng-container matColumnDef="created">
+      <th *matHeaderCellDef
+          [ngClass]="'w-150'"
+          mat-header-cell
+          mat-sort-header>
+        Created
+      </th>
+      <td *matCellDef="let element"
+          mat-cell> {{element.created |  date: 'mediumDate'}}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="kids">
+      <th *matHeaderCellDef
+          [ngClass]="'w-100'"
+          mat-header-cell
+          mat-sort-header>
+        No. of Kids
+      </th>
+      <td *matCellDef="let element"
+          mat-cell> {{element.kids}}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="age">
+      <th *matHeaderCellDef
+          [ngClass]="'w-100'"
+          mat-header-cell
+          mat-sort-header>
+        Age
+      </th>
+      <td *matCellDef="let element"
+          mat-cell> {{element.age}}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="friends">
+      <th *matHeaderCellDef
+          [ngClass]="'w-300'"
+          mat-header-cell
+          mat-sort-header>
+        Friends
+      </th>
+      <td *matCellDef="let element"
+          mat-cell>
+        {{element.friends | friendsNames}}
+      </td>
+    </ng-container>
+    <tr *matHeaderRowDef="visibleColumns"
+        mat-header-row>
+    </tr>
+    <tr *matRowDef="let row; columns: visibleColumns;"
+        @fadeInUp
+        mat-row>
+    </tr>
+  </table>
+  <mat-paginator
+    [pageSizeOptions]="[5,10,15]"
+    [pageSize]="10"
+    class="paginator"
+  >
+  </mat-paginator>
+</div>
