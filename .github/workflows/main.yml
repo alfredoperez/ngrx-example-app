@@ -25,4 +25,4 @@ jobs:
           base_href: /ngrx-example-app/
           deploy_branch: gh-pages
           angular_dist_build_folder: ngrx-example-app/dist/ngrx-example-app
-          angular_project_dir: ngrx-example-app
+       
